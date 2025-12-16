@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 import os
 from dotenv import load_dotenv
 import subprocess
@@ -22,7 +21,7 @@ def createDB():
             cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
             print("Database 'alx_book_store' created successfully!")
             conn.close()
-    except Error as err:
+    except mysql.connector.Error as err:
         print(f"Error while while connecting database: {err}")
 
     finally:
